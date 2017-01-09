@@ -94,5 +94,49 @@
 
 /*项目属性*/
 .flex .item{
-    
+    /*
+        order：
+                        1、作用：定义项目的排列顺序，取值越小排列越靠前
+                        2、默认值：0
+     */
+    order : <Integer>;
+
+    /*
+        flex-grow:
+                        1、作用：设置项目的放大属性。
+                        2、默认值：1
+                        3、说明：如果所有项目的flex-grow属性都为1，则等分剩余空间。
+     */
+    flex-grow: <Integer>;
+
+    /*
+        flex-shrink:
+                        1、作用：定义项目的缩小属性
+                        2、默认值：1
+     */
+    flex-shrink: <Integer>;
+
+    /*
+        flex-basis:
+                        1、作用：定义在分配多余空间之前项目占据的主轴空间。
+                        2、默认值：auto
+                        3、可取值：
+                            3.1、auto
+                            3.2、类似宽高的明确值（如 30px 5rem 10em...）
+     */
+    flex-basis: <length | auto>;
+
+    /*
+        flex:
+                        1、作用：flex-grow、flex-shrink和flex-basis的简写
+     */
+    flex: <flex-grow> <flex-shrink> <flex-basis>;
+
+    /*
+        align-self：
+                        1、作用：允许项目采用单独的对齐方式
+                        2、默认值：auto，继承父元素的对齐方式
+                        3、可取值：除了auto，其他与align-items一致
+     */
+    align-self: auto | flex-start | center | flex-end | baseline | stretch;
 }
