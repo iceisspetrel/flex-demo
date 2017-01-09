@@ -1,0 +1,98 @@
+/**
+ * Flex 弹性布局 note by iceiss
+ */
+
+/*
+    基本概念：flex布局的元素称为flex容器。它的所有子元素自动称为容器成员，称为flex项目。
+    flex容器默认存在两根轴。水平方向上的主轴（main axis）以及垂直方向上的交叉轴（cross axis）；
+    水平主轴（main axis）的起始点称为 main start， 结束点称为 main end
+    垂直交叉轴（cross axis）的起始点称为 cross start， 结束点称为 cross end
+    flex项目默认沿着 main axis排列。占据的主轴空间称为 main size，占据的交叉轴空间称为 cross size
+ */
+
+/*容器属性*/
+.flex{
+    display: flex; /*盒模型的flex布局设置*/
+    display: inline-flex; /*行内元素的flex布局设置*/
+    display: -webkit-flex; /*webkit内核浏览器flex布局盒模型写法*/
+    display: -webkit-inline-flex; /*webkit内核浏览器flex布局行内写法*/
+
+    /*
+        flex-direction:
+                        1、作用：设置容器的排列方向
+                        2、默认值：row
+                        3、可取值：
+                            3.1 row            沿水平方向排列 起始点在左侧
+                            3.2 row-reverse    沿水平方向排列，起始点在右侧
+                            3.3 column         沿吹着方向排列，起始点在上沿
+                            3.4 column-reverse 沿垂直方向排列，起始点在下沿
+     */
+    flex-direction: row | row-reverse | column | column-reverse;
+
+    /*
+        flex-wrap：
+                        1、作用：默认情况下，flex项目都排列在同一轴线上，使用flex-wrap可以定义flex布局的换行方式
+                        2、默认值：nowrap
+                        3、可取值：
+                            3.1、nowrap       不换行
+                            3.2、wrap         换行，先到先排原则，即先进入的项目排在前面的行
+                            3.3、wrap-reverse 换行，厚道先排原则，即后进入的项目排在前面的行
+     */
+    flex-wrap: nowrap | wrap | wrap-reverse;
+
+    /*
+        flex-flow:
+                        1、作用：flex-flow是flex-dirction和flex-wrap的简写方式
+                        2、默认值：row nowrap
+                        3、可取值：
+                            3.1、见flex-direction
+                            3.2、见flex-wrap
+     */
+    flex-flow: <row | row-reverse | column | column-reverse> <nowrap | wrap | wrap-reverse>;
+
+
+    /*
+        justify-content:
+                        1、作用：定义flex项目在主轴（main axis）方向上的对齐方式
+                        2、默认值：flex-start
+                        3、可取值：
+                            3.1、flex-start     左对齐
+                            3.2、center         居中
+                            3.3、flex-end       右对齐
+                            3.4、space-between  两端顶格对齐，项目间的间隔相等
+                            3.5、space-around   项目两侧的间隔相等，所以项目到项目的距离是项目到边框距离的两倍
+     */
+    justify-content : flex-start | center | flex-end | space-between | space-around;
+
+    /*
+        align-items:
+                        1、作弄：定义项目在交叉轴（cross axis）的对齐方式
+                        2、默认值：flex-start
+                        3、可取值：
+                            3.1、flex-start 上沿对齐
+                            3.2、center     居中对齐
+                            3.3、flex-end   下沿对齐
+                            3.4、baseline   根据项目的第一行文字对齐
+                            3.5、stretch    如果项目没有设置高度，则占满整个容器高度
+    */
+    align-items: flex-start | center | flex-end | baseline | stretch;
+
+    /*
+        align-content:
+                        1、作弄：定义多跟轴线的对齐方式，针对项目换行的情况
+                        2、默认值：flex-start
+                        3、可取值：
+                            3.1、flex-start 上沿对齐
+                            3.2、center     居中对齐
+                            3.3、flex-end   下沿对齐
+                            3.4、space-between  与交叉轴两端对齐，项目间间隔相等
+                            3.5、space-around   所有项目两端的间隙相等
+                            3.6、stretch        如果项目没有设置高度，则占满整个容器高度
+    */
+    align-content : flex-start | center | flex-end | space-between | space-around | stretch;
+}
+
+/*项目属性*/
+.flex .item{
+    
+}
